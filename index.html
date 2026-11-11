@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101426">
+<title>Technical LR Bhai AI Creator</title>
+<style>
+:root{--bg:#0b1020;--panel:#151d33;--panel2:#1d2945;--text:#f4f7ff;--muted:#aab5ce;--accent:#7c5cff;--accent2:#18c8b7;--line:#2b3858}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#202c50 0,#0b1020 48%);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:18px 14px 40px}.hero{padding:24px 18px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#202b4b,#151a31);box-shadow:0 14px 40px #0005}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:54px;height:54px;border-radius:17px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:900;font-size:17px;box-shadow:0 8px 22px #7c5cff55}
+h1{font-size:21px;line-height:1.2;margin:0} .sub{color:var(--muted);font-size:13px;margin:7px 0 0}.pill{display:inline-block;margin-top:17px;border:1px solid #3c4b70;border-radius:99px;padding:6px 10px;color:#c8d5f3;font-size:12px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 2px}.top h2{font-size:17px;margin:0}.lang{background:#202b48;color:white;border:1px solid #3b4b70;border-radius:12px;padding:9px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:12px 0 18px}.nav{border:1px solid var(--line);background:#151d33;color:var(--text);padding:14px;border-radius:17px;text-align:left;min-height:92px;font-weight:700}.nav small{display:block;color:var(--muted);font-weight:400;margin-top:6px}.nav.active{border-color:var(--accent2);background:#1a2b43;box-shadow:0 0 0 1px #18c8b733}
+.card{display:none;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:17px;margin-top:10px}.card.active{display:block}.card h3{margin:0 0 7px;font-size:18px}.hint{color:var(--muted);font-size:13px;margin:0 0 14px;line-height:1.5}
+label{display:block;font-size:13px;color:#d9e2f7;margin:12px 0 6px}input,textarea,select{width:100%;border:1px solid #3a496b;background:#0d1427;color:white;border-radius:12px;padding:12px;font:inherit;outline:none}textarea{min-height:95px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--accent2)}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:750;color:white;background:linear-gradient(135deg,var(--accent),#5c83ff)}.btn.secondary{background:#273552;border:1px solid #405276}.btn.green{background:linear-gradient(135deg,#0da994,#087d83)}
+.output{white-space:pre-wrap;overflow-wrap:anywhere;background:#0c1428;border:1px solid #334364;border-radius:13px;padding:13px;margin-top:14px;min-height:54px;line-height:1.55;color:#eaf0ff;font-size:14px}.guide{padding:12px;border-radius:12px;background:#101a30;border:1px solid #2c3a5b;margin:9px 0;color:#e2eaff;line-height:1.5}.footer{text-align:center;color:#8390ad;font-size:12px;margin:24px 0 0}.note{font-size:12px;color:#93a2c0;line-height:1.5;margin-top:12px}
+@media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.nav{padding:12px;font-size:13px}.wrap{padding:12px 10px 30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="brand"><div class="logo">LR</div><div><h1>TECHNICAL LR BHAI<br>AI CREATOR</h1><p class="sub" data-hi="आपका क्रिएटर टूलकिट — एक ही जगह" data-en="Your creator toolkit — all in one place">आपका क्रिएटर टूलकिट — एक ही जगह</p></div></div>
+    <span class="pill" data-hi="मोबाइल डेमो • Version 2" data-en="Mobile Demo • Version 2">मोबाइल डेमो • Version 2</span>
+  </header>
+  <div class="top"><h2 data-hi="अपना टूल चुनें" data-en="Choose your tool">अपना टूल चुनें</h2><select class="lang" id="language" aria-label="Language"><option value="hi">हिंदी</option><option value="en">English</option></select></div>
+  <nav class="grid">
+    <button class="nav active" data-target="video">🎬 <span data-hi="AI Video Prompt" data-en="AI Video Prompt">AI Video Prompt</span><small data-hi="वीडियो के लिए प्रॉम्प्ट" data-en="Prompt for videos">वीडियो के लिए प्रॉम्प्ट</small></button>
+    <button class="nav" data-target="image">🖼️ <span data-hi="AI Image Prompt" data-en="AI Image Prompt">AI Image Prompt</span><small data-hi="इमेज के लिए प्रॉम्प्ट" data-en="Prompt for images">इमेज के लिए प्रॉम्प्ट</small></button>
+    <button class="nav" data-target="facebook">📘 <span data-hi="Facebook Guide" data-en="Facebook Guide">Facebook Guide</span><small data-hi="क्रिएटर गाइड" data-en="Creator guide">क्रिएटर गाइड</small></button>
+    <button class="nav" data-target="youtube">▶️ <span data-hi="YouTube Guide" data-en="YouTube Guide">YouTube Guide</span><small data-hi="चैनल गाइड" data-en="Channel guide">चैनल गाइड</small></button>
+    <button class="nav" data-target="meta">✍️ <span data-hi="Title, Tags & Description" data-en="Title, Tags & Description">Title, Tags & Description</span><small data-hi="पोस्ट का टेक्स्ट तैयार करें" data-en="Prepare post text">पोस्ट का टेक्स्ट तैयार करें</small></button>
+  </nav>
+
+  <section class="card active" id="video">
+    <h3 data-hi="AI Video Prompt" data-en="AI Video Prompt">AI Video Prompt</h3><p class="hint" data-hi="अपना सीन लिखें और वीडियो प्रॉम्प्ट तैयार करें।" data-en="Describe your scene and create a video prompt.">अपना सीन लिखें और वीडियो प्रॉम्प्ट तैयार करें।</p>
+    <label data-hi="वीडियो का विषय" data-en="Video subject">वीडियो का विषय</label><textarea id="videoSubject" placeholder="एक गांव की चाय की दुकान पर सुबह लोगों की भीड़ लगी है।"></textarea>
+    <div class="actions"><button class="btn" onclick="makeVideo()" data-hi="प्रॉम्प्ट बनाएं" data-en="Generate prompt">प्रॉम्प्ट बनाएं</button></div><div class="output" id="videoOut">आपका प्रॉम्प्ट यहाँ दिखाई देगा।</div><div class="actions"><button class="btn green" onclick="copyOutput('videoOut')" data-hi="पूरा प्रॉम्प्ट कॉपी करें" data-en="Copy full prompt">पूरा प्रॉम्प्ट कॉपी करें</button></div>
+  </section>
+
+  <section class="card" id="image">
+    <h3 data-hi="AI Image Prompt" data-en="AI Image Prompt">AI Image Prompt</h3><p class="hint" data-hi="अपनी इमेज का विषय लिखें।" data-en="Describe the image you want.">अपनी इमेज का विषय लिखें।</p>
+    <label data-hi="इमेज का विषय" data-en="Image subject">इमेज का विषय</label><textarea id="imageSubject" placeholder="एक सुंदर गांव, हरे-भरे खेत, बीच में छोटी चाय की दुकान और सुबह का सूरज।"></textarea>
+    <label data-hi="फॉर्मेट" data-en="Format">फॉर्मेट</label><select id="imageFormat"><option value="9:16 vertical">9:16 Vertical</option><option value="16:9 horizontal">16:9 Horizontal</option><option value="1:1 square">1:1 Square</option></select>
+    <div class="actions"><button class="btn" onclick="makeImage()" data-hi="प्रॉम्प्ट बनाएं" data-en="Generate prompt">प्रॉम्प्ट बनाएं</button></div><div class="output" id="imageOut">आपका प्रॉम्प्ट यहाँ दिखाई देगा।</div><div class="actions"><button class="btn green" onclick="copyOutput('imageOut')" data-hi="पूरा प्रॉम्प्ट कॉपी करें" data-en="Copy full prompt">पूरा प्रॉम्प्ट कॉपी करें</button></div>
+  </section>
+
+  <section class="card" id="facebook">
+    <h3>📘 Facebook Guide</h3>
+    <div class="guide">1. प्रोफाइल/पेज की जानकारी सही और पूरी रखें।</div><div class="guide">2. अपना ओरिजिनल कंटेंट पोस्ट करें और दूसरों का कंटेंट बिना अनुमति कॉपी न करें।</div><div class="guide">3. Professional Dashboard में Monetization और Policy सेक्शन नियमित देखें।</div><div class="guide">4. पासवर्ड और OTP किसी से साझा न करें।</div><div class="guide">5. कमाई और eligibility के नियम समय के साथ बदल सकते हैं; ऐप में दिख रही आधिकारिक जानकारी देखें।</div>
+  </section>
+  <section class="card" id="youtube">
+    <h3>▶️ YouTube Guide</h3>
+    <div class="guide">1. चैनल का नाम, हैंडल, फोटो और बैनर सेट करें।</div><div class="guide">2. About सेक्शन में चैनल का विषय साफ लिखें।</div><div class="guide">3. वीडियो का सही टाइटल, डिस्क्रिप्शन और thumbnail दें।</div><div class="guide">4. YouTube Studio में Analytics और Copyright देखें।</div><div class="guide">5. Community Guidelines और monetization policies पढ़ें।</div>
+  </section>
+  <section class="card" id="meta">
+    <h3 data-hi="Title, Tags & Description" data-en="Title, Tags & Description">Title, Tags & Description</h3><p class="hint" data-hi="वीडियो का विषय लिखें।" data-en="Enter your video topic.">वीडियो का विषय लिखें।</p>
+    <label data-hi="वीडियो का विषय" data-en="Video topic">वीडियो का विषय</label><input id="topic" placeholder="Facebook pe photo se kamai"/>
+    <label data-hi="प्लेटफॉर्म" data-en="Platform">प्लेटफॉर्म</label><select id="platform"><option value="Facebook">Facebook</option><option value="YouTube">YouTube</option></select>
+    <div class="actions"><button class="btn" onclick="makeMeta()" data-hi="तैयार करें" data-en="Generate">तैयार करें</button></div><div class="output" id="metaOut">आपका टेक्स्ट यहाँ दिखाई देगा।</div><div class="actions"><button class="btn green" onclick="copyOutput('metaOut')" data-hi="पूरा टेक्स्ट कॉपी करें" data-en="Copy full text">पूरा टेक्स्ट कॉपी करें</button></div>
+  </section>
+  <p class="note">नोट: यह Version 2 एक ऑफलाइन डेमो है। यह तैयार टेम्पलेट से प्रॉम्प्ट/टेक्स्ट बनाता है; अभी किसी असली AI API से कनेक्ट नहीं है।</p>
+  <div class="footer">Made for Technical LR Bhai • Version 2</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.nav').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.card').forEach(x=>x.classList.remove('active'));btn.classList.add('active');$(btn.dataset.target).classList.add('active');}));
+function makeVideo(){let s=$('videoSubject').value.trim();if(!s){alert('पहले वीडियो का विषय लिखें।');return;} $('videoOut').textContent=`Ultra-realistic cinematic, vertical 9:16, 10 seconds. Subject: ${s}. Clear visual storytelling, realistic movement, consistent subjects, natural lighting, detailed textures, smooth camera movement, believable physics. No text or watermark unless requested.`;}
+function makeImage(){let s=$('imageSubject').value.trim();if(!s){alert('पहले इमेज का विषय लिखें।');return;} $('imageOut').textContent=`4K, ${$('imageFormat').value}. Subject: ${s}. Carefully composed scene, natural lighting, realistic details, balanced framing, sharp focus. No text or watermark unless requested.`;}
+function makeMeta(){let s=$('topic').value.trim();if(!s){alert('पहले वीडियो का विषय लिखें।');return;}let p=$('platform').value;let clean=s.replace(/[.!?]/g,'');$('metaOut').textContent=`TITLE:\n${clean} | ${p} Creator Guide\n\nDESCRIPTION:\nइस वीडियो में ${clean} के बारे में आसान भाषा में जानकारी दी गई है। पूरी जानकारी के लिए वीडियो देखें।\n\nTAGS:\n${clean}, creator tips, content creation, social media tips\n\nHASHTAGS:\n#CreatorTips #ContentCreation`;}
+async function copyOutput(id){let value=$(id).innerText.trim();if(!value||value.includes('यहाँ दिखाई देगा')){alert('पहले टेक्स्ट तैयार करें।');return;}try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);}else{let area=document.createElement('textarea');area.value=value;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.focus();area.select();let ok=document.execCommand('copy');area.remove();if(!ok)throw new Error('copy failed');}alert('पूरा टेक्स्ट कॉपी हो गया!');}catch(e){let area=document.createElement('textarea');area.value=value;document.body.appendChild(area);area.focus();area.select();alert('अब Select all करके Copy दबाएं।');}}
+$('language').addEventListener('change',e=>{let lang=e.target.value;document.querySelectorAll('[data-hi]').forEach(el=>el.textContent=el.dataset[lang]);});
+</script>
+</body></html>
